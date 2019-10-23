@@ -1,0 +1,13 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.width100{
+    width: 100%;
+}
+
+.modal-ku {
+  width: 2000px;
+  margin: auto;
+}
