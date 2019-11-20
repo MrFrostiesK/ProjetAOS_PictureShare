@@ -41,7 +41,7 @@ $(function() {
     }
     $.ajax({
         method: "GET",
-        url: "http://the-dodo.xyz:3000/api/memez/skip/1",
+        url: "http://localhost:3000/api/memez/skip/1",
         dataType: "json",
         success: function(result){
             for (var i = 0; i < result.length; i++) {
@@ -67,7 +67,7 @@ $(function() {
             console.log("is tru");
             $.ajax({
                 method: "GET",
-                url: "http://the-dodo.xyz:3000/api/users",
+                url: "http://localhost:3000/api/users",
                 dataType: "json",
                 success: function(result){
                     var isok = true;
@@ -88,7 +88,7 @@ $(function() {
                         console.log(newUser);
                         $.ajax({
                             type: "POST",
-                            url: "http://the-dodo.xyz:3000/api/user/new",
+                            url: "http://localhost:3000/api/user/new",
                             data: JSON.stringify(newUser),
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
@@ -121,7 +121,7 @@ function getMore() {
     skip++;
     $.ajax({
         method: "GET",
-        url: "http://the-dodo.xyz:3000/api/memez/skip/"+skip,
+        url: "http://localhost:3000/api/memez/skip/"+skip,
         dataType: "json",
         success: function(result){
             if(result.length === 0){
@@ -139,7 +139,7 @@ function getMore() {
 
 function upload() {
     if($("#title").val()!=="" && $("#url").val() !== ""){
-        console.log("dodomemes");
+        console.log("picturesmemes");
         var jsonFormat = {
             title: $("#title").val(),
             file: $("#url").val(),
@@ -149,7 +149,7 @@ function upload() {
         console.log(jsonFormat);
         $.ajax({
             type: "POST",
-            url: "http://the-dodo.xyz:3000/api/memes",
+            url: "http://localhost:3000/api/memes",
             data: JSON.stringify(jsonFormat),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -170,19 +170,19 @@ function upload() {
 }
 
 
-function uploadDodo() {
+function uploadPicture() {
     for (var i = 605; i < 820; i++) {
-        console.log("dodomemes");
+        console.log("picturememes");
         var jsonFormat = {
-            title: "Meme #" + i + " from Dodo's collection",
-            file: "http://the-dodo.xyz/memes/"+i+".jpg",
+            title: "Meme #" + i + " from Picture's collection",
+            file: "http://localhost/memes/"+i+".jpg",
             score: "0",
-            author: "Dodo"
+            author: "Clement"
         };
         console.log(jsonFormat);
         $.ajax({
             type: "POST",
-            url: "http://the-dodo.xyz:3000/api/memes",
+            url: "http://localhost:3000/api/memes",
             data: JSON.stringify(jsonFormat),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -231,7 +231,7 @@ function logIn(){
     console.log(usrnm+"&"+passwrd);
     $.ajax({
         method: "GET",
-        url: "http://the-dodo.xyz:3000/api/user/exist/"+usrnm+"&"+passwrd,
+        url: "http://localhost:3000/api/user/exist/"+usrnm+"&"+passwrd,
         dataType: "json",
         success: function(result){
             if(result.length>0){
