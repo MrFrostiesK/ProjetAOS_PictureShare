@@ -47,5 +47,4 @@ echo "<br>";
 var_dump($result);
 echo "<br>";
 var_dump($context);
-//header("Location: http://the-dodo.xyz/");
 ?>
