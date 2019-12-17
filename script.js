@@ -62,7 +62,7 @@ $(function() {
     });
     $("#regForm").submit(function(e){
         e.preventDefault();
-        //console.log("hehehehe");
+        //console.log("YES");
         if ($('#pass1').val() === $('#pass2').val()) {
             console.log("is tru");
             $.ajax({
@@ -149,7 +149,7 @@ function upload() {
         console.log(jsonFormat);
         $.ajax({
             type: "POST",
-            url: "http://localhost/memes/",
+            url: "http://localhost:3000/api/memes",
             data: JSON.stringify(jsonFormat),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
