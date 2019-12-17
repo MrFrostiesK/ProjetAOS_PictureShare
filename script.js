@@ -41,7 +41,7 @@ $(function() {
     }
     $.ajax({
         method: "GET",
-        url: "ADEFINIR/",
+        url: "http://localhost:3000/api/memes/skip/1",
         dataType: "json",
         success: function(result){
             for (var i = 0; i < result.length; i++) {
@@ -67,7 +67,7 @@ $(function() {
             console.log("is tru");
             $.ajax({
                 method: "GET",
-                url: "ADEFINIR/",
+                url: "http://localhost:3000/api/users",
                 dataType: "json",
                 success: function(result){
                     var isok = true;
@@ -88,7 +88,7 @@ $(function() {
                         console.log(newUser);
                         $.ajax({
                             type: "POST",
-                            url: "ADEFINIR/",
+                            url: "http://localhost:3000/api/user/new",
                             data: JSON.stringify(newUser),
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
@@ -121,7 +121,7 @@ function getMore() {
     skip++;
     $.ajax({
         method: "GET",
-        url: "ADEFINIR/"+skip,
+        url: "http://localhost:3000/api/memes/skip/"+skip,
         dataType: "json",
         success: function(result){
             if(result.length === 0){
@@ -149,7 +149,7 @@ function upload() {
         console.log(jsonFormat);
         $.ajax({
             type: "POST",
-            url: "ADEFINIR/",
+            url: "http://localhost/memes/",
             data: JSON.stringify(jsonFormat),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -175,14 +175,14 @@ function uploadPicture() {
         console.log("picturememes");
         var jsonFormat = {
             title: "Meme #" + i + " from Picture's collection",
-            file: "ADEFINIR/"+i+".jpg",
+            file: "http://localhost/memes/"+i+".jpg",
             score: "0",
             author: "Clement"
         };
         console.log(jsonFormat);
         $.ajax({
             type: "POST",
-            url: "ADEFINIR/",
+            url: "http://localhost:3000/api/memes",
             data: JSON.stringify(jsonFormat),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -231,7 +231,7 @@ function logIn(){
     console.log(usrnm+"&"+passwrd);
     $.ajax({
         method: "GET",
-        url: "ADEFINIR/"+usrnm+"&"+passwrd,
+        url: "http://localhost:3000/api/user/exist/"+usrnm+"&"+passwrd,
         dataType: "json",
         success: function(result){
             if(result.length>0){
