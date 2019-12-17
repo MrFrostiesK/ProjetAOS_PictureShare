@@ -41,7 +41,7 @@ $(function() {
     }
     $.ajax({
         method: "GET",
-        url: "http://localhost:3000/api/memes/skip/1",
+        url: "http://localhost:3000/api/memez/skip/1",
         dataType: "json",
         success: function(result){
             for (var i = 0; i < result.length; i++) {
@@ -121,7 +121,7 @@ function getMore() {
     skip++;
     $.ajax({
         method: "GET",
-        url: "http://localhost:3000/api/memes/skip/"+skip,
+        url: "http://localhost:3000/api/memez/skip/"+skip,
         dataType: "json",
         success: function(result){
             if(result.length === 0){
